@@ -9,6 +9,8 @@
     <Compile Remove="Migrations\20220105123944_AddCatalogDisciplineGradeStudentTeacher.Designer.cs" />
     <Compile Remove="Migrations\20220105124337_AddCatalogDisciplineGradeStudentTeacher.cs" />
     <Compile Remove="Migrations\20220105124337_AddCatalogDisciplineGradeStudentTeacher.Designer.cs" />
+    <Compile Remove="Migrations\20220105152715_AddCatalogDisciplineGradeStudentTeacher.cs" />
+    <Compile Remove="Migrations\20220105152715_AddCatalogDisciplineGradeStudentTeacher.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

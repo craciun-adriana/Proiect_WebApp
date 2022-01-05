@@ -10,7 +10,7 @@ using Proiect_WebApp.Data;
 namespace Proiect_WebApp.Migrations
 {
     [DbContext(typeof(Proiect_WebAppContext))]
-    [Migration("20220105152715_AddCatalogDisciplineGradeStudentTeacher")]
+    [Migration("20220105161315_AddCatalogDisciplineGradeStudentTeacher")]
     partial class AddCatalogDisciplineGradeStudentTeacher
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,10 +28,10 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("clasa")
+                    b.Property<int>("Clasa")
                         .HasColumnType("int");
 
-                    b.Property<int>("promotie")
+                    b.Property<int>("Promotie")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -46,10 +46,10 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("denumire")
+                    b.Property<string>("Denumire")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("detalii")
+                    b.Property<string>("Detalii")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -64,23 +64,19 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("data")
+                    b.Property<DateTime>("Data")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("fk_grade_discipline")
+                    b.Property<int>("ElevID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("fk_grade_student")
+                    b.Property<int>("MaterieID")
                         .HasColumnType("int");
 
-                    b.Property<int>("nota")
+                    b.Property<int>("Nota")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("fk_grade_discipline");
-
-                    b.HasIndex("fk_grade_student");
 
                     b.ToTable("Grade");
                 });
@@ -92,13 +88,13 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("adresa")
+                    b.Property<string>("Adresa")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("denumire")
+                    b.Property<string>("Denumire")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefon")
+                    b.Property<string>("Telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -116,18 +112,16 @@ namespace Proiect_WebApp.Migrations
                     b.Property<int>("CatalogID")
                         .HasColumnType("int");
 
-                    b.Property<string>("nume")
+                    b.Property<string>("Nume")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("prenume")
+                    b.Property<string>("Prenume")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("telefon")
+                    b.Property<string>("Telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CatalogID");
 
                     b.ToTable("Student");
                 });
@@ -139,62 +133,27 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("data_angajarii")
+                    b.Property<DateTime>("Data_angajarii")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("fk_teacher_discipline")
+                    b.Property<int>("MaterieID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("fk_teacher_school")
+                    b.Property<string>("Nume")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Prenume")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Scoala")
                         .HasColumnType("int");
 
-                    b.Property<string>("nume")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("prenume")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("telefon")
+                    b.Property<string>("Telefon")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("fk_teacher_discipline");
-
-                    b.HasIndex("fk_teacher_school");
-
                     b.ToTable("Teacher");
-                });
-
-            modelBuilder.Entity("Proiect_WebApp.Models.Grade", b =>
-                {
-                    b.HasOne("Proiect_WebApp.Models.Discipline", "MaterieID")
-                        .WithMany()
-                        .HasForeignKey("fk_grade_discipline");
-
-                    b.HasOne("Proiect_WebApp.Models.Student", "elev")
-                        .WithMany()
-                        .HasForeignKey("fk_grade_student");
-                });
-
-            modelBuilder.Entity("Proiect_WebApp.Models.Student", b =>
-                {
-                    b.HasOne("Proiect_WebApp.Models.Catalog", "catalog")
-                        .WithMany()
-                        .HasForeignKey("CatalogID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Proiect_WebApp.Models.Teacher", b =>
-                {
-                    b.HasOne("Proiect_WebApp.Models.Discipline", "MaterieID")
-                        .WithMany()
-                        .HasForeignKey("fk_teacher_discipline");
-
-                    b.HasOne("Proiect_WebApp.Models.School", "scoala")
-                        .WithMany()
-                        .HasForeignKey("fk_teacher_school");
                 });
 #pragma warning restore 612, 618
         }
