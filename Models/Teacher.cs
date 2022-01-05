@@ -23,9 +23,10 @@ namespace Proiect_WebApp.Models
         [Display(Name = "Hire Date")]
         public DateTime Data_angajarii { get; set; }
 
-        public int Scoala { get; set; }
+        public int ScoalaID { get; set; }
+        public School Scoala { get; set; }
 
         public int MaterieID { get; set; }
-
+        public Discipline Materie { get; set; }
     }
 }

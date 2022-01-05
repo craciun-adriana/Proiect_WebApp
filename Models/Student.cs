@@ -22,6 +22,8 @@ namespace Proiect_WebApp.Models
 
         [Display(Name = "Catalog ID")]
         public int CatalogID { get; set; }
+        public Catalog Catalog { get; set; }
 
+        public ICollection<Grade> Grades { get; set; }
     }
 }

@@ -18,8 +18,9 @@ namespace Proiect_WebApp.Models
         public DateTime Data { get; set; }
 
         public int MaterieID { get; set; }
+        public Discipline Materie { get; set; }
 
         public int ElevID { get; set; }
-
+        public Student Elev { get; set; }
     }
 }

@@ -16,5 +16,8 @@ namespace Proiect_WebApp.Models
 
         [Display(Name = "Details")]
         public string Detalii { get; set; }
+
+        public ICollection<Teacher> Teachers { get; set; }
+        public ICollection<Grade> Grades { get; set; }
     }
 }

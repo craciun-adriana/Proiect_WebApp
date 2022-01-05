@@ -18,5 +18,7 @@ namespace Proiect_WebApp.Models
 
         [Display(Name = "School Phone")]
         public string Telefon { get; set; }
+
+        public ICollection<Teacher> Teachers { get; set; }
     }
 }

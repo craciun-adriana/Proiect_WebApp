@@ -11,6 +11,6 @@ namespace Proiect_WebApp.Models
         public int Clasa { get; set; }
         public int Promotie { get; set; }
 
-     
+        public ICollection<Student> Students { get; set; }
     }
 }
