@@ -51,17 +51,17 @@ namespace Proiect_WebApp.Migrations
                     nume = table.Column<string>(nullable: true),
                     prenume = table.Column<string>(nullable: true),
                     telefon = table.Column<string>(nullable: true),
-                    fk_student_catalog = table.Column<int>(nullable: true)
+                    CatalogID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Student", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Student_Catalog_fk_student_catalog",
-                        column: x => x.fk_student_catalog,
+                        name: "FK_Student_Catalog_CatalogID",
+                        column: x => x.CatalogID,
                         principalTable: "Catalog",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -133,9 +133,9 @@ namespace Proiect_WebApp.Migrations
                 column: "fk_grade_student");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Student_fk_student_catalog",
+                name: "IX_Student_CatalogID",
                 table: "Student",
-                column: "fk_student_catalog");
+                column: "CatalogID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Teacher_fk_teacher_discipline",

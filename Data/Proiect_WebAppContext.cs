@@ -25,6 +25,7 @@ namespace Proiect_WebApp.Data
         public DbSet<Discipline> Discipline { get; set; }
 
         public DbSet<Catalog> Catalog { get; set; }
+
     }
 }
 

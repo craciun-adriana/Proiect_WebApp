@@ -12,18 +12,14 @@ namespace Proiect_WebApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Grade")]
-        public int nota { get; set; }
+        public int Nota { get; set; }
 
         [Display(Name = "Data")]
-        public DateTime data { get; set; }
+        public DateTime Data { get; set; }
 
-        [Display(Name = "ID Discipline")]
-        [ForeignKey("fk_grade_discipline")]
-        public virtual Discipline materie { get; set; }
+        public int MaterieID { get; set; }
 
-        [Display(Name = "ID Student")]
-        [ForeignKey("fk_grade_student")]
-        public virtual Student elev { get; set; }
+        public int ElevID { get; set; }
 
     }
 }

@@ -12,16 +12,16 @@ namespace Proiect_WebApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Student First Name")]
-        public string nume { get; set; }
+        public string Nume { get; set; }
 
         [Display(Name = "Student Last Name")]
-        public string prenume { get; set; }
+        public string Prenume { get; set; }
 
         [Display(Name = "Student Phone")]
-        public string telefon { get; set; }
+        public string Telefon { get; set; }
 
         [Display(Name = "Catalog ID")]
-        [ForeignKey("fk_student_catalog")]
-        public Catalog catalog { get; set; }
+        public int CatalogID { get; set; }
+
     }
 }

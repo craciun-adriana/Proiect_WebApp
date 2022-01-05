@@ -12,9 +12,9 @@ namespace Proiect_WebApp.Models
         public int ID{ get; set; }
 
         [Display(Name = "Discipline Name")]
-        public string denumire { get; set; }
+        public string Denumire { get; set; }
 
         [Display(Name = "Details")]
-        public string detalii { get; set; }
+        public string Detalii { get; set; }
     }
 }

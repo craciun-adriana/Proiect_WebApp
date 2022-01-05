@@ -11,12 +11,12 @@ namespace Proiect_WebApp.Models
     {   public int ID { get; set; }
 
         [Display(Name = "School Name")]
-        public string denumire { get; set; }
+        public string Denumire { get; set; }
 
         [Display(Name = "School Adress")]
-        public string adresa { get; set; }
+        public string Adresa { get; set; }
 
         [Display(Name = "School Phone")]
-        public string telefon { get; set; }
+        public string Telefon { get; set; }
     }
 }

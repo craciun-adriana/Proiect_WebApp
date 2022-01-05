@@ -10,7 +10,7 @@ using Proiect_WebApp.Data;
 namespace Proiect_WebApp.Migrations
 {
     [DbContext(typeof(Proiect_WebAppContext))]
-    [Migration("20220105124337_AddCatalogDisciplineGradeStudentTeacher")]
+    [Migration("20220105152715_AddCatalogDisciplineGradeStudentTeacher")]
     partial class AddCatalogDisciplineGradeStudentTeacher
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -113,7 +113,7 @@ namespace Proiect_WebApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("fk_student_catalog")
+                    b.Property<int>("CatalogID")
                         .HasColumnType("int");
 
                     b.Property<string>("nume")
@@ -127,7 +127,7 @@ namespace Proiect_WebApp.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("fk_student_catalog");
+                    b.HasIndex("CatalogID");
 
                     b.ToTable("Student");
                 });
@@ -168,7 +168,7 @@ namespace Proiect_WebApp.Migrations
 
             modelBuilder.Entity("Proiect_WebApp.Models.Grade", b =>
                 {
-                    b.HasOne("Proiect_WebApp.Models.Discipline", "materie")
+                    b.HasOne("Proiect_WebApp.Models.Discipline", "MaterieID")
                         .WithMany()
                         .HasForeignKey("fk_grade_discipline");
 
@@ -181,12 +181,14 @@ namespace Proiect_WebApp.Migrations
                 {
                     b.HasOne("Proiect_WebApp.Models.Catalog", "catalog")
                         .WithMany()
-                        .HasForeignKey("fk_student_catalog");
+                        .HasForeignKey("CatalogID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Proiect_WebApp.Models.Teacher", b =>
                 {
-                    b.HasOne("Proiect_WebApp.Models.Discipline", "materie")
+                    b.HasOne("Proiect_WebApp.Models.Discipline", "MaterieID")
                         .WithMany()
                         .HasForeignKey("fk_teacher_discipline");
 
