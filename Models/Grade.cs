@@ -11,10 +11,13 @@ namespace Proiect_WebApp.Models
     {
         public int ID { get; set; }
 
+        [RegularExpression(@"^[1-10]{1}$"), Required]
         [Display(Name = "Grade")]
         public int Nota { get; set; }
 
+
         [Display(Name = "Data")]
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
         public int MaterieID { get; set; }
