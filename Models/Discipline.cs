@@ -11,7 +11,7 @@ namespace Proiect_WebApp.Models
     {
         public int ID{ get; set; }
 
-        [RegularExpression(@"^[A-Z][a-z]$"), Required, StringLength(30, MinimumLength = 2)]
+        [RegularExpression(@"^[a-zA-Z ]*$"), Required, StringLength(30, MinimumLength = 2)]
         [Display(Name = "Discipline Name")]
         public string Denumire { get; set; }
 

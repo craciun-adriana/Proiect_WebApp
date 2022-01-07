@@ -10,7 +10,7 @@ namespace Proiect_WebApp.Models
     public class School
     {   public int ID { get; set; }
 
-        [RegularExpression(@"^[A-Z][a-z]", ErrorMessage = "Numele trebuie sa fie de forma 'Nume'"), Required, StringLength(50, MinimumLength = 3)]
+        [RegularExpression(@"^[a-zA-Z ]*$", ErrorMessage = "Numele trebuie sa fie de forma 'Nume'"), Required, StringLength(50, MinimumLength = 3)]
         [Display(Name = "School Name")]
         public string Denumire { get; set; }
 
@@ -18,7 +18,7 @@ namespace Proiect_WebApp.Models
         [Display(Name = "School Adress")]
         public string Adresa { get; set; }
 
-        [RegularExpression(@"^[0-9]{10-13}$", ErrorMessage = "Numarul de telefon trebuie sa fie de forma '0123456789'"), Required, StringLength(13, MinimumLength = 10)]
+        [RegularExpression(@"^[0-9]{10,13}$", ErrorMessage = "Numarul de telefon trebuie sa fie de forma '0123456789'"), Required, StringLength(13, MinimumLength = 10)]
         [Display(Name = "School Phone")]
         public string Telefon { get; set; }
 

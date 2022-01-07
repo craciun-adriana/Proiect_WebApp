@@ -10,7 +10,7 @@ namespace Proiect_WebApp.Models
     {
         public int ID { get; set; }
 
-        [Required, Range(8, 12)]
+        [Required, Range(5, 12)]
         [Display(Name = "Class")]
         public int Clasa { get; set; }
 

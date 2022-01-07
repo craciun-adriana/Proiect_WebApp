@@ -11,19 +11,19 @@ namespace Proiect_WebApp.Models
     {
         public int ID { get; set; }
 
-        [RegularExpression(@"^[A-Z][a-z]", ErrorMessage = "Numele trebuie sa fie de forma 'Nume'"), Required, StringLength(50, MinimumLength = 2)]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Numele trebuie sa fie de forma 'Nume'"), Required, StringLength(50, MinimumLength = 2)]
         [Display(Name = "Student First Name")]
         public string Nume { get; set; }
 
-        [RegularExpression(@"^[A-Z][a-z]", ErrorMessage = "Prenumele trebuie sa fie de forma 'Prenume'"), Required, StringLength(50, MinimumLength = 2)]
+        [RegularExpression(@"^[A-Z][a-z]*$", ErrorMessage = "Prenumele trebuie sa fie de forma 'Prenume'"), Required, StringLength(50, MinimumLength = 2)]
         [Display(Name = "Student Last Name")]
         public string Prenume { get; set; }
 
-        [RegularExpression(@"^[0-9]{10-13}$", ErrorMessage = "Numarul de telefon trebuie sa fie de forma '0123456789'"), Required, StringLength(13, MinimumLength = 10)]
+        [RegularExpression(@"^[0-9]{10,13}$", ErrorMessage = "Numarul de telefon trebuie sa fie de forma '0123456789'"), Required, StringLength(13, MinimumLength = 10)]
         [Display(Name = "Student Phone")]
         public string Telefon { get; set; }
 
-        [Required, StringLength(13, MinimumLength = 10)]
+        [Required]
         [Display(Name = "Catalog ID")]
         public int CatalogID { get; set; }
         public Catalog Catalog { get; set; }
