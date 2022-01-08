@@ -11,6 +11,8 @@
     <Compile Remove="Migrations\20220105124337_AddCatalogDisciplineGradeStudentTeacher.Designer.cs" />
     <Compile Remove="Migrations\20220105152715_AddCatalogDisciplineGradeStudentTeacher.cs" />
     <Compile Remove="Migrations\20220105152715_AddCatalogDisciplineGradeStudentTeacher.Designer.cs" />
+    <Compile Remove="Migrations\20220108175319_RenameColumns.cs" />
+    <Compile Remove="Migrations\20220108175319_RenameColumns.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
